@@ -1,3 +1,3 @@
 # moto widget and launcher
 
-##  ¼òÊö
+##  ç®€ è¿°
