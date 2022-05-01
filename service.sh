@@ -8,7 +8,7 @@ exec 2>$MODPATH/debug.log
 set -x
 
 # wait
-sleep 60
+sleep 1
 
 # grant
 PKG=com.motorola.timeweatherwidget
@@ -28,6 +28,8 @@ pm grant $PKG android.permission.CALL_PHONE
 if [ "$API" -gt 29 ]; then
   appops set $PKG AUTO_REVOKE_PERMISSIONS_IF_UNUSED ignore
 fi
+# 安装moto 小部件
+pm install -g --user 0 $MODPATH/system/app/TimeWeather/TimeWeather.apk
 
 ) 2>/dev/null
 

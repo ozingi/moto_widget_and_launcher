@@ -17,13 +17,21 @@ ui_print " "
 
 # sdk
 NUM=29
-if [ "$API" -lt $NUM ]; then
-  ui_print "! Unsupported SDK $API."
-  ui_print "  You have to upgrade your Android version"
-  ui_print "  at least SDK API $NUM to use this module."
+SDK31=31
+if [  $API -lt $NUM ]; then
+  ui_print "! 不支持的SDK $API."
+  ui_print "  请升级你的安卓版本"
+  ui_print "  使用此模块需要安卓10 SDK $NUM 及以上  "
   abort
+elif [ $API -gt $SDK31 ]; then
+  ui_print " 你的SDK版本 大于 31"
+  ui_print " 已自动安装 moto 小部件和DerpLauncher修复多任务界面"
+  rm -rf $TMPDIR/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk
+  cp -f $TMPDIR/launcher/*  $TMPDIR/system
 else
-  ui_print "- SDK $API"
+  ui_print " 你的SDK版本是 $API"
+  ui_print " 已自动安装 moto 小部件和moto launcher"
+  rm -rf $TMPDIR/launcher
   ui_print " "
 fi
 
