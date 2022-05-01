@@ -5,7 +5,7 @@
 
 ## 主要疗效
 1. 添加了最新的Moto 小部件 (4.06.33)；
-2. 对喜欢或熟悉moto launcher的比较nice，但12L无法使用；
+2. 对喜欢或熟悉moto launcher的比较nice，但12L无法使用，可以选择停用；
 3. 可以修复类原生12L的QuickSwitch多任务手势。
 
 
