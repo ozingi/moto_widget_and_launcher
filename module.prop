@@ -1,9 +1,9 @@
 id=moto_widget_and_launcher
 name=moto widget and launcher
-version=v1.6.06
-versionCode=1606
+version=v1.6.08
+versionCode=1608
 author=深夜听表
-description= moto 小部件和 moto launcher 还有A12L的DerpLauncher,自动选择安装。
+description= moto 小部件和 moto launcher 还有A12L的DerpLauncher,自动选择安装；支持A10+
 updateJson=https://taoaoooo.github.io/json/mMoudle/update/moto_widget_and_launcher/updateJson.json
 
 

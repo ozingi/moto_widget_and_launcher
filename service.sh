@@ -1,14 +1,16 @@
 MODDIR=${0%/*}
-# 判断是不是首次加载模块
+# 判断是否首次加载模块
 
-FIRST=$(find -name $MODDIR/debug.log)
-if [ $FIRST ]; then
-
-# 安装moto 小部件
-    pm install -g --user 0 $MODDIR/system/app/TimeWeather/TimeWeather.apk || echo "安装失败"
+FIRST=$(find $MODDIR -name debug.log)
+if [ -z $FIRST ]; then
+ # wait
+    sleep 20
+# 修复moto 小部件
+    pm install -g --user 0 $MODDIR/system/app/TimeWeather/TimeWeather.apk && echo "修复成功" >>$MODDIR/debug.log 2>&1 || (echo "安装失败" >>$MODDIR/debug.log 2>&1)
 
 else
    (
+:<<EOF
     API=`getprop ro.build.version.sdk`
 
     # debug
@@ -36,10 +38,14 @@ else
     if [ "$API" -gt 29 ]; then
       appops set $PKG AUTO_REVOKE_PERMISSIONS_IF_UNUSED ignore
     fi
-
+EOF
+#   2022 劳动节快乐！
+     echo "2022 劳动节快乐！" >>$MODDIR/debug.log 2>&1
     
 
     ) 2>/dev/null
+
+
 fi
 
 

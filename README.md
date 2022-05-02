@@ -5,7 +5,7 @@
 
 ## 主要疗效
 1. 修复了原moudle Moto 小部件在12L无法使用并更新版本到 V4.06.33；
-2. 对喜欢或熟悉moto launcher的比较nice，但12L无法使用，可以选择停用；
+2. 对喜欢或熟悉moto launcher的比较nice，但不支持12L，会自动选择性安装；
 3. 可以修复类原生12L的QuickSwitch多任务手势。
 
 
