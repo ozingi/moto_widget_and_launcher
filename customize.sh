@@ -26,12 +26,14 @@ if [  $API -lt $NUM ]; then
 elif [ $API -gt $SDK31 ]; then
   ui_print " 你的SDK版本 大于 31"
   ui_print " 已自动安装 moto 小部件和DerpLauncher修复多任务界面"
-  rm -rf $TMPDIR/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk
-  cp -f $TMPDIR/launcher/*  $TMPDIR/system
+  rm -rf $MODPATH/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk || echo "error code:29 lines"
+  cp -rf $MODPATH/launcher/*  $MODPATH/system || echo "error code:30 lines"
+  rm -rf $MODPATH/launcher
+  ui_print "$MODPATH $TMPDIR"
 else
   ui_print " 你的SDK版本是 $API"
   ui_print " 已自动安装 moto 小部件和moto launcher"
-  rm -rf $TMPDIR/launcher
+  rm -rf $MODPATH/launcher
   ui_print " "
 fi
 
