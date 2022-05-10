@@ -18,6 +18,10 @@ ui_print " "
 # sdk
 NUM=29
 SDK31=31
+#ui_print "$MODPATH $MODDIR"
+# 覆盖安装时处理
+rm -f /data/adb/modules/moto_widget_and_launcher/debug.log
+rm -rf /system/system_ext/priv-app/DerpLauncherQuickStep
 if [  $API -lt $NUM ]; then
   ui_print "! 不支持的SDK $API."
   ui_print "  请升级你的安卓版本"
@@ -29,7 +33,7 @@ elif [ $API -gt $SDK31 ]; then
   rm -rf $MODPATH/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk || echo "error code:29 lines"
   cp -rf $MODPATH/launcher/*  $MODPATH/system || echo "error code:30 lines"
   rm -rf $MODPATH/launcher
-  ui_print "$MODPATH $TMPDIR"
+  
 else
   ui_print " 你的SDK版本是 $API"
   ui_print " 已自动安装 moto 小部件和moto launcher"
