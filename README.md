@@ -1,4 +1,4 @@
-# moto widget and launcher
+﻿# moto widget and launcher
 
 ## 更新日志
 1. Derplauncher换成了Corvus Launcher最新版，多任务界面多了内存信息展示

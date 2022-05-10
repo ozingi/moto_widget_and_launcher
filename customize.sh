@@ -1,4 +1,4 @@
-ui_print " "
+﻿ui_print " "
 
 # boot mode
 if [ "$BOOTMODE" != true ]; then
@@ -19,9 +19,8 @@ ui_print " "
 NUM=29
 SDK31=31
 #ui_print "$MODPATH $MODDIR"
-# 覆盖安装时处理
-rm -f /data/adb/modules/moto_widget_and_launcher/debug.log
-rm -rf /system/system_ext/priv-app/DerpLauncherQuickStep
+
+
 if [  $API -lt $NUM ]; then
   ui_print "! 不支持的SDK $API."
   ui_print "  请升级你的安卓版本"
@@ -40,6 +39,10 @@ else
   rm -rf $MODPATH/launcher
   ui_print " "
 fi
+
+# 覆盖安装时处理
+rm -f /data/adb/modules/moto_widget_and_launcher/debug.log
+rm -rf /system/system_ext/priv-app/DerpLauncherQuickStep
 
 # sepolicy.rule
 if [ "$BOOTMODE" != true ]; then
