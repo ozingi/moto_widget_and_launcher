@@ -28,21 +28,71 @@ if [  $API -lt $NUM ]; then
   abort
 elif [ $API -gt $SDK31 ]; then
   ui_print " 你的SDK版本 大于 31"
-  ui_print " 已自动安装 moto 小部件和DerpLauncher修复多任务界面"
-  rm -rf $MODPATH/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk || echo "error code:29 lines"
+  ui_print " "
   cp -rf $MODPATH/launcher/*  $MODPATH/system || echo "error code:30 lines"
+  rm -rf $MODPATH/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk || echo "error code:29 lines"
+  rm -rf $MODPATH/system/product/overlay/Launcher3QuickStepRecentsOverlay/Launcher3QuickStepRecentsOverlay.apk || echo "error code:34 lines"
+  find $MODPATH/system/etc -type f -name "*com.motorola.launcher3*" -exec rm -rf {} \;
+  ui_print " "
+  ui_print " 已自动安装 moto 小部件和Corvus Launcher修复多任务界面"
   rm -rf $MODPATH/launcher
+  REPLACE_EXAMPLE="
+    /system/app/Youtube
+    /system/priv-app/SystemUI
+    /system/priv-app/Settings
+    /system/framework
+    "
+
+    # Construct your own list here
+  REPLACE="
+    /system/priv-app/AsusLauncherDev
+    /system/priv-app/Lawnchair
+    /system/priv-app/NexusLauncherPrebuilt
+    /system/system_ext/priv-app/Launcher3QuickStep
+    /system/product/priv-app/ParanoidQuickStep
+    /system/product/priv-app/ShadyQuickStep
+    /system/product/priv-app/TrebuchetQuickStep
+    /system/system_ext/priv-app/DerpLauncherQuickStep
+    /system/system_ext/priv-app/NexusLauncherRelease
+    /system/system_ext/priv-app/TrebuchetQuickStep
+    /system/system_ext/priv-app/Lawnchair
+    "
+    
+
+    ##########################################################################################
+    # Permissions
+    ##########################################################################################
+
+    set_permissions() {
+        : # Remove this if adding to this function
+
+        # Note that all files/folders in magisk module directory have the $MODPATH prefix - keep this prefix on all of your files/folders
+        # Some examples:
   
+        # For directories (includes files in them):
+        # set_perm_recursive  <dirname>                <owner> <group> <dirpermission> <filepermission> <contexts> (default: u:object_r:system_file:s0)
+  
+        # set_perm_recursive $MODPATH/system/lib 0 0 0755 0644
+        # set_perm_recursive $MODPATH/system/vendor/lib/soundfx 0 0 0755 0644
+
+        # For files (not in directories taken care of above)
+        # set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
+  
+        # set_perm $MODPATH/system/lib/libart.so 0 0 0644
+        # set_perm /data/local/tmp/file.txt 0 0 644
+    }
+
 else
   ui_print " 你的SDK版本是 $API"
   ui_print " 已自动安装 moto 小部件和moto launcher"
   rm -rf $MODPATH/launcher
   ui_print " "
+
 fi
 
 # 覆盖安装时处理
 rm -f /data/adb/modules/moto_widget_and_launcher/debug.log
-rm -rf /system/system_ext/priv-app/DerpLauncherQuickStep
+#rm -rf /system/system_ext/priv-app/DerpLauncherQuickStep
 
 # sepolicy.rule
 if [ "$BOOTMODE" != true ]; then
@@ -92,16 +142,17 @@ if getprop | grep -Eq "moto.recents\]: \[1"; then
   conflict
   ui_print " "
 else
-  rm -rf $MODPATH/system/product
+  rm -rf $MODPATH/system/product/overlay/Launcher3QuickStepRecentsOverlay
 fi
 
 # cleaning
 ui_print "- Cleaning..."
-APP="`ls $MODPATH/system/priv-app` `ls $MODPATH/system/app`"
+APP="`ls $MODPATH/system/priv-app` `ls $MODPATH/system/app` `ls $MODPATH/system/system_ext/app`"
 PKG="com.motorola.launcher3
      com.motorola.timeweatherwidget
      com.motorola.motosignature.app
-     com.motorola.android.providers.settings"
+     com.motorola.android.providers.settings
+     "
 if [ "$BOOTMODE" == true ]; then
   PKG2=`echo $PKG | sed -n -e 's/com.motorola.timeweatherwidget//p'`
   for PKG2S in $PKG2; do
@@ -217,6 +268,7 @@ if ! pm list features | grep -Eq $NAME; then
   ui_print "  next reboot for app updates"
   ui_print " "
 fi
+
 
 
 

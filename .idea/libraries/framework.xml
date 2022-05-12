@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="framework">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/system/framework/com.motorola.motosignature.jar!/" />
+      <root url="jar://$PROJECT_DIR$/system/framework/moto-checkin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/system/framework/moto-core_services.jar!/" />
+      <root url="jar://$PROJECT_DIR$/system/framework/moto-settings.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

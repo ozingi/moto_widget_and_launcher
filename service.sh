@@ -1,4 +1,5 @@
 MODDIR=${0%/*}
+
 # 判断是否首次加载模块
 
 FIRST=$(find $MODDIR -name debug.log)
@@ -47,6 +48,7 @@ EOF
 
 
 fi
+
 
 
 
