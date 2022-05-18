@@ -10,5 +10,8 @@
 1. 修复了原moudle Moto 小部件在12L无法使用并更新版本到 V4.06.33；
 2. 对喜欢或熟悉moto launcher的比较nice，但不支持12L，会自动选择性安装crdroid home；
 3. 可以修复类原生12L的QuickSwitch多任务手势。
+### 🥰如果喜欢你也可以请我喝白开水🥰
 
+### [打赏 / Donate](https://ozingi.github.io/img/payment/Alipay.jpg)
+<img alt="图片笑死了" style="width:40% " src="https://ozingi.github.io/img/payment/Alipay.jpg"/>
 
