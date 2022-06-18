@@ -3,6 +3,6 @@
     <package packageName="com.motorola.launcher3"
         disallowUpdateAllContextWhenConfigChanged="true"
         restartWhenDisplayChanged="false" />
-    <component componentName="com.motorola.launcher3/com.android.launcher3.secondarydisplay.SecondaryDisplayLauncher"
+    <component componentName="com.motorola.launcher3/app.lawnchair.secondarydisplay.SecondaryDisplayLauncher"
         forceWindowMode="fullscreen" />
 </moto-desktop-app-config>
