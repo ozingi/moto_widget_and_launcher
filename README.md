@@ -12,7 +12,7 @@
 ## 主要疗效
 1. 修复了原moudle Moto 小部件在12L无法使用并更新版本；
 2. 对喜欢或熟悉moto launcher的比较nice，但不支持12L，会自动选择性安装lawnchair；
-3. 可以修复类原生12L的QuickSwitch多任务手势。
+3. 可以修复类原生12L的多任务手势,此过程会将lawnchair设为默认多任务手势，这会和QuickSwitch模块冲突，使用前先卸载QuickSwitch模块。
 ### 🥰如果喜欢你也可以请我喝白开水🥰
 
 ### [打赏 / Donate](https://ozingi.github.io/img/payment/Alipay.jpg)
