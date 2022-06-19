@@ -1,7 +1,8 @@
 ﻿# moto widget and launcher
+## 更新日志 2022.6.19
+1. 12l的crdroid home换成了lawnchair；
 ## 更新日志 2022.5.27
 1. moto小部件更新至4.06.37；
-
 ## 更新日志 2022.5.15
 1. 添加了四套最新的sony动态壁纸，贼酷炫；
 2. 12l的Corvus launcher换成了crdroid home 支持换图标，不喜欢的也可以继续用Corvus Launcher版同样有新壁纸。

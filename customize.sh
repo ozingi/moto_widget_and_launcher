@@ -34,7 +34,7 @@ elif [ $API -gt $SDK31 ]; then
   rm -rf $MODPATH/system/product/overlay/Launcher3QuickStepRecentsOverlay/Launcher3QuickStepRecentsOverlay.apk || echo "error code:34 lines"
   find $MODPATH/system/etc -type f -name "*com.motorola.launcher3*" -exec rm -rf {} \;
   ui_print " "
-  ui_print " 已自动安装 moto 小部件和Corvus Launcher修复多任务界面"
+  ui_print " 已自动安装 moto 小部件和lawnchair修复多任务界面"
   rm -rf $MODPATH/launcher
   REPLACE_EXAMPLE="
     /system/app/Youtube

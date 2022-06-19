@@ -1,9 +1,16 @@
-id=moto_widget_and_launcher
+﻿id=moto_widget_and_launcher
 name=moto widget and launcher
-version=v2.0.01
-versionCode=2.0.01
+<<<<<<< HEAD
+version=v2.0.05
+versionCode=2005
 author=深夜听表
-description= moto 小部件和 moto launcher 还有A12L的crdroid Launcher,自动选择安装；支持A10+
+description= moto 小部件和 moto launcher 还有A12L的lawnchair,自动选择安装；支持A10+:
+=======
+version=v2.0.03
+versionCode=2.0.03
+author=深夜听表
+description= moto 小部件和 moto launcher 还有A12L的Launcher,自动选择安装；支持A10+
+>>>>>>> 48cec46 (Update to version 2.0.03)
 updateJson=https://ozingi.github.io/json/mMoudle/update/moto_widget_and_launcher/updateJson.json
 
 
