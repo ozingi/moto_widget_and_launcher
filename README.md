@@ -12,6 +12,7 @@
 ### 🥰如果喜欢你也可以请我喝果汁🥰
 ### [打赏 / Donate](https://ozingi.github.io/img/payment/Alipay.jpg)
 <img alt="图片笑死了" style="width:40% " src="https://ozingi.github.io/img/payment/Alipay.jpg"/>
+
 ### 推广
 [进入web3领取最高1万元数字礼包](https://ozingi.github.io/html/AD/crypto.html)
 
