@@ -17,7 +17,7 @@ ui_print " "
 
 # sdk
 NUM=29
-SDK31=31
+SDK29=29
 #ui_print "$MODPATH $MODDIR"
 
 
@@ -26,15 +26,15 @@ if [  $API -lt $NUM ]; then
   ui_print "  请升级你的安卓版本"
   ui_print "  使用此模块需要安卓10 SDK $NUM 及以上  "
   abort
-elif [ $API -gt $SDK31 ]; then
-  ui_print " 你的SDK版本 大于 31"
+elif [ $API -ge $SDK29 ]; then
+  ui_print " 你的SDK版本 $API 符合要求"
   ui_print " "
   cp -rf $MODPATH/launcher/*  $MODPATH/system || echo "error code:30 lines"
   rm -rf $MODPATH/system/priv-app/Launcher3QuickStep/Launcher3QuickStep.apk || echo "error code:29 lines"
   rm -rf $MODPATH/system/product/overlay/Launcher3QuickStepRecentsOverlay/Launcher3QuickStepRecentsOverlay.apk || echo "error code:34 lines"
   find $MODPATH/system/etc -type f -name "*com.motorola.launcher3*" -exec rm -rf {} \;
   ui_print " "
-  ui_print " 已自动安装 moto 小部件和lawnchair修复多任务界面"
+  ui_print " 已自动安装此模块 重启生效"
   rm -rf $MODPATH/launcher
   REPLACE_EXAMPLE="
     /system/app/Youtube
@@ -84,9 +84,11 @@ elif [ $API -gt $SDK31 ]; then
 
 else
   ui_print " 你的SDK版本是 $API"
-  ui_print " 已自动安装 moto 小部件和moto launcher"
+  #ui_print " 已自动安装 moto 小部件和moto launcher"
   rm -rf $MODPATH/launcher
-  ui_print " "
+
+  ui_print " 出现未知错误"
+  abort
 
 fi
 
