@@ -1,4 +1,7 @@
 ﻿# moto widget and launcher
+## 更新日志 2022.7.12
+1. 更新Moto小部件 (4.07.01)，小部件ui有变化；
+2. 更新lawnchair。
 ## 更新日志 2022.7.1
 1. 更新lawnchair；
 2. 优化安装过程。
