@@ -1,10 +1,10 @@
 ﻿# moto widget and launcher
+## 更新日志 2022.8.12
+1. 更新Moto小部件 (4.07.31)，保持原有组件的同时新增了天气和时钟的自适应小组件；
+2. 更新lawnchair。
 ## 更新日志 2022.7.12
 1. 更新Moto小部件 (4.07.01)，小部件ui有变化；
 2. 更新lawnchair。
-## 更新日志 2022.7.1
-1. 更新lawnchair；
-2. 优化安装过程。
 ##  简述
 手痒删了类原生自带的Android 12L launcher，所以找支持12L QuickSwitch多任务界面的launcher过程中，找到了[reiryuki](https://github.com/reiryuki) 的 moto launcher 和[android-hub](https://www.opencode.net/android-hub)的Derp Launcher 受此启发做了这个模块。
 
