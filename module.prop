@@ -1,9 +1,9 @@
 id=moto_widget_and_launcher
 name=moto widget and launcher
-version=v2.3.60
+version=v2.4.02
 versionCode=2360
 author=深夜听表
-description= moto 小部件和 launcher,自动选择安装；支持A10+，已测试平台：类原生12.1:
+description= moto 小部件和 launcher,自动选择安装；支持A13，已测试平台：ArrowOS 13.0 类原生应该都行:
 updateJson=https://ozingi.github.io/json/mMoudle/update/moto_widget_and_launcher/updateJson.json
 
 
